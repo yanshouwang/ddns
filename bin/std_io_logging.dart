@@ -63,8 +63,6 @@ void _stdIOLogListener(LogRecord record, {required bool verbose}) =>
 /// Filter out the Logger names which aren't coming from specific builders and
 /// splits the header for levels >= WARNING.
 String _recordHeader(LogRecord record, bool verbose) {
-  var maybeSplit = record.level >= Level.WARNING ? '\n' : '';
-  return verbose || record.loggerName.contains(' ')
-      ? '${record.loggerName}:$maybeSplit'
-      : '';
+  var maybeSplit = record.level >= Level.WARNING ? '\n' : ' ';
+  return verbose ? '${record.loggerName}:$maybeSplit' : '';
 }

@@ -1,30 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'go_daddy_record.dart';
+part of 'client.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GoDaddyRecordJSONObject _$GoDaddyRecordJSONObjectFromJson(
-        Map<String, dynamic> json) =>
-    GoDaddyRecordJSONObject(
+GoDaddyRecord _$GoDaddyRecordFromJson(Map<String, dynamic> json) =>
+    GoDaddyRecord(
       data: json['data'] as String,
-      name: json['name'] as String,
       port: json['port'] as int?,
       priority: json['priority'] as int?,
       protocol: json['protocol'] as String?,
       service: json['service'] as String?,
       ttl: json['ttl'] as int?,
-      type: json['type'] as String,
       weight: json['weight'] as int?,
     );
 
-Map<String, dynamic> _$GoDaddyRecordJSONObjectToJson(
-    GoDaddyRecordJSONObject instance) {
+Map<String, dynamic> _$GoDaddyRecordToJson(GoDaddyRecord instance) {
   final val = <String, dynamic>{
     'data': instance.data,
-    'name': instance.name,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -38,7 +33,23 @@ Map<String, dynamic> _$GoDaddyRecordJSONObjectToJson(
   writeNotNull('protocol', instance.protocol);
   writeNotNull('service', instance.service);
   writeNotNull('ttl', instance.ttl);
-  val['type'] = instance.type;
   writeNotNull('weight', instance.weight);
   return val;
 }
+
+GoDaddyClientConfig _$GoDaddyClientConfigFromJson(Map<String, dynamic> json) =>
+    GoDaddyClientConfig(
+      key: json['key'] as String,
+      secret: json['secret'] as String,
+      domains: (json['domains'] as List<dynamic>)
+          .map((e) => DomainConfig.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$GoDaddyClientConfigToJson(
+        GoDaddyClientConfig instance) =>
+    <String, dynamic>{
+      'key': instance.key,
+      'secret': instance.secret,
+      'domains': instance.domains,
+    };

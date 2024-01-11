@@ -1,0 +1,19 @@
+{
+    "duration": 60,
+    "times": 5,
+    "recordTypes": [
+        "A",
+        "AAAA"
+    ],
+    "detectorType": "http",
+    "detectors": {
+        "http": {
+            "urls": {
+                "A": "https://v4.ident.me",
+                "AAAA": "https://v6.ident.me"
+            }
+        }
+    },
+    "clients": {
+    }
+}
